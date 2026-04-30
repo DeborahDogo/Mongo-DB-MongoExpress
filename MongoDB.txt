@@ -1,2 +1,3 @@
-Kubernetes pulls the username and password from a Secret(a secure way sensitive data is stored E.g passwords,tokens or keys) and passes them into the container as environment variables(key-value pairs e.g Username=Debs) , instead of hardcoding them in the YAML.
-MongoDB then reads those variables on startup to securely create the admin user without ever exposing the credentials in plain text in the file.
+You open Mongo Express and your request just starts flowing,NodePort picks it up, kube-proxy routes it, and the Service passes it to the right pod.
+Mongo Express then pulls the database address from the ConfigMap, connects to MongoDB through its Service, and logs in using the Secret(where sensitive data is stored e.g tokens,keys or passwords).
+Everything just clicks and moves smoothly and seamlessly...more like a package passing through the right hands and with no delay till it gets exactly where it should.
